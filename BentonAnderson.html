@@ -1,0 +1,79 @@
+<html>
+<title>
+Benton Anderson's page
+</title>
+<body style="background-color:cornflowerblue;">
+<center>
+<h1>
+Benton Anderson's page
+</h1>
+This is a <b> Doctor Who </b> quiz. 
+<br>
+You will be asked three questions about the famous British TV series <i> Doctor Who</i>.
+<br>
+More info can be found <a href="https://en.wikipedia.org/wiki/Doctor_Who" target="_blank"> here. </a>
+<br>
+<br>
+<br>
+<br>
+
+
+
+Question 1: Which of the following is the cover art for series 5?<br>
+a) <img src="dwseries5cover.jfif" onclick="quizCorrectAnswer.update('quizResult1');"/> <br>
+b) <img src="dwseries6cover.jfif" onclick="quizIncorrectAnswer.update('quizResult1');"/> <br>
+c) <img src="dwseries7cover.jfif" onclick="quizIncorrectAnswer.update('quizResult1');"/> <br>
+<br>
+<div id="quizResult1"></div>
+<br>
+
+Question 2: Who is currently acting as the Doctor? <br>
+<input type = "p" onClick="quizIncorrectAnswer.update('quizResult2');" value="a) Matt Smith" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<input type = "p" onClick="quizCorrectAnswer.update('quizResult2');" value="b) Jodie Whittaker" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<input type = "p" onClick="quizIncorrectAnswer.update('quizResult2');" value="c) Peter Capaldi" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<br>
+<div id="quizResult2"></div>
+
+Question 3: Who composed the original Doctor Who theme? <br>
+<input type = "p" onClick="quizIncorrectAnswer.update('quizResult3');" value="a) Murray Gold" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<input type = "p" onClick="quizIncorrectAnswer.update('quizResult3');" value="b) John Williams" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<input type = "p" onClick="quizCorrectAnswer.update('quizResult3');" value="c) Ron Grainer" style="background-color:cornflowerblue;" readonly="readonly"/>
+<br>
+<br>
+<div id="quizResult3"></div>
+
+<br>
+<input type="button" onclick="reset('quizResult1'); reset('quizResult2'); reset('quizResult3');" value="RESET" />
+
+<script type="text/javascript">
+class QuizText
+{
+	constructor(question)
+	{
+		this.name = question;
+	}
+	
+	update(tag)
+	{
+		document.getElementById(tag).innerHTML = this.name;
+	}
+}
+
+function reset(tag)
+{
+	document.getElementById(tag).innerHTML = " ";
+}
+
+
+let quizCorrectAnswer = new QuizText("Correct!");
+let quizIncorrectAnswer = new QuizText("Incorrect. Try again.");
+</script>
+
+</center>
+</body>
+</html>
